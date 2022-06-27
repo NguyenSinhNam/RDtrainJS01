@@ -2,7 +2,7 @@ $("#user").hide();
 const URL = "https://62b40a124f851f87f4635c93.mockapi.io/api/v1/users/";
 
 // Get Users Api
-async function getUsersFromApi(URL) {
+async function getUsersFromApi(URL, callback) {
   const response = await fetch(URL);
   var users = await response.json();
   var tab = '';
@@ -13,6 +13,10 @@ async function getUsersFromApi(URL) {
   // Show all user
   document.getElementById("list_users").innerHTML = tab;
 
+  callback();
+};
+
+function infoUser() {
   // Show info user item
   var userItem = $(".userItem");
   userItem.on('click', function() {
@@ -57,10 +61,10 @@ async function getUsersFromApi(URL) {
         console.log(error);
       });
   });
-};
+}
 
 // Update user
-function infoUser() {
+function updateUser() {
 
   // Change info user
   $(".input_field").on("change", function(e) {
@@ -102,5 +106,5 @@ function infoUser() {
   });
 }
 
-getUsersFromApi(URL);
-infoUser();
+getUsersFromApi(URL, infoUser);
+updateUser();
