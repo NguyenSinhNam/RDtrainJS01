@@ -1,0 +1,464 @@
+@charset "UTF-8";
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+
+a,
+address,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+button,
+caption,
+center,
+cite,
+code,
+dd,
+details,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+i,
+iframe,
+img,
+input,
+label,
+li,
+main,
+mark,
+menu,
+nav,
+ol,
+p,
+pre,
+q,
+s,
+section,
+select,
+small,
+span,
+strong,
+summary,
+table,
+tbody,
+td,
+textarea,
+tfoot,
+th,
+thead,
+time,
+tr,
+u,
+ul,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+a:focus,
+a:hover {
+  color: #D9AD79;
+  text-decoration: none;
+  outline: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+b,
+strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+button,
+input,
+select {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  cursor: pointer;
+}
+
+[disabled] {
+  cursor: default;
+}
+
+[type="reset"],
+[type="submit"],
+button,
+html [type="button"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button:-moz-focusring,
+input:-moz-focusring {
+  outline: 1px dotted;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: '';
+  content: none;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  color: #333333;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+input[type="email"],
+select,
+textarea {
+  outline: none;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  color: #323232;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  border: 1px solid #7db827;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[disabled="disabled"] {
+  background: #f1f1f1;
+}
+
+button {
+  outline: none;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  padding: 10px 25px;
+  color: #323232;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+textarea {
+  height: 115px;
+}
+
+.container {
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.col {
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+.span_6 {
+  width: 50%;
+}
+
+.col.span_6 {
+  width: calc(50% - 10px);
+}
+
+.span_3 {
+  width: 25%;
+}
+
+.col.span_3 {
+  width: calc(25% - 15px);
+}
+
+.col.span_3:nth-child(4n) {
+  margin-right: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sp_only {
+  display: none;
+}
+
+p {
+  line-height: 24px;
+}
+
+.list_users {
+  width: 700px;
+  margin: 50px auto;
+}
+
+.list_users li {
+border: 1px solid #ddd;
+}
+
+.list_users li .info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.list_users li:nth-child(even) {
+  background-color: #ddd;
+}
+
+.user {
+  display: none;
+}
+
+.form_date_user {
+  width: 700px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.form_date_user .input_field {
+  width: calc(50% - 8px);
+  display: block;
+}
+
+.form_date_user .input_field:nth-child(n+3) {
+  margin-top: 16px;
+}
+
+.form_date_user .submit {
+  text-align: center;
+  margin-top: 16px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Training FE-js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <ul class="list_users" id="list_users">
+
+    </ul>
+    <div id="user" class="user">
+      <form id="form_data" class="form_date_user" action="index.html" method="post">
+        <div class="input_field">
+          <label for="">ID</label>
+          <input type="text" name="id" class="id" disabled="disabled">
+        </div>
+        <div class="input_field">
+          <label for="">createdAt</label>
+          <input type="date" name="createdAt" class="createdAt" value="">
+        </div>
+        <div class="input_field">
+          <label for="">firstname</label>
+          <input type="text" name="firstname" class="firstname" value="">
+        </div>
+        <div class="input_field">
+          <label for="">lastname</label>
+          <input type="text" name="lastname" class="lastname" value="">
+        </div>
+        <div class="input_field">
+          <label for="">gender</label>
+          <select class="gender" name="gender">
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+        <div class="input_field">
+          <label for="">active</label>
+          <select class="active" name="active">
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+        <div class="submit">
+          <button type="button" class="update_user" name="submit">Update</button>
+        </div>
+      </form>
+    </div>
+
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>
