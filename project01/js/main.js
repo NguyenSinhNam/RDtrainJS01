@@ -106,5 +106,23 @@ function updateUser() {
   });
 }
 
+function deleteUser() {
+  $('.delete_user').click(function() {
+    let id = $(".id").val();
+    fetch(URL + id, {
+      method: 'DELETE'
+    }).then(() => {
+      console.log('removed');
+    }).catch(err => {
+      console.error(err)
+    });
+
+    window.setTimeout(() => {
+      window.location.reload(true);
+    }, 1000);
+  })
+}
+
 getUsersFromApi(URL, infoUser);
 updateUser();
+deleteUser();
