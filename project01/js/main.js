@@ -41,24 +41,24 @@ async function getUsersFromApi(URL, callback) {
   callback();
 };
 
-function infoUser() {
-  // Show info user item
-  var userItem = $(".userItem");
-  userItem.on('click', function() {
-    var getID = $(this).attr('id');
+function api(type, data, url) {
+  $.ajax({
+    url: url,
+    type: type,
+    dataType: 'json',
+    data,
+    success: function(data, textStatus, xhr) {
 
-    fetch(URL + getID)
-      .then(response => response.json())
-      .then(function(user) {
+      console.log(data);
 
-        $(".id").val([user.id]);
-        $(".firstname").val([user.firstName]);
-        $(".lastname").val([user.lastName]);
-        $(".gender").val([user.gender]);
-        $(".active").val([user.active]);
+      if (type === "GET") {
+        $(".id").val([data.id]);
+        $(".firstname").val([data.firstName]);
+        $(".lastname").val([data.lastName]);
+        $(".gender").val([data.gender]);
+        $(".active").val([data.active]);
 
-        let createdAt = [user.createdAt];
-
+        let createdAt = [data.createdAt];
         if (!isNaN(createdAt)) {
           let myObj = $.parseJSON(createdAt),
             myDate = new Date(1000 * myObj);
@@ -73,32 +73,17 @@ function infoUser() {
 
           $(".createdAt").val(date);
         } else {
-          $(".createdAt").val([user.createdAt]);
+          $(".createdAt").val([data.createdAt]);
         }
 
         $(".table_user").remove();
         $("#update_user").show();
-
-      })
-
-      .catch(function(error) {
-        // If there is any error you will catch them here
-        console.log(error);
-      });
-  });
-}
-
-function api(type, data, url) {
-  $.ajax({
-    url: url,
-    type: type,
-    dataType: 'json',
-    data,
-    success: function(data, textStatus, xhr) {
-      console.log(data);
-      window.setTimeout(() => {
+      } else {
+        window.setTimeout(() => {
         window.location.reload(true);
-      }, 1000);
+      }, 500);
+      }
+
     },
     error: function(xhr, textStatus, errorThrown) {
       console.log('Error in Operation');
@@ -106,43 +91,55 @@ function api(type, data, url) {
   });
 }
 
+function infoUser() {
+  // Show info user item
+  var userItem = $(".userItem");
+  userItem.on('click', function() {
+    let getID = $(this).attr('id');
+
+    let getURL = URL + getID;
+
+
+    let data = {};
+
+    api('GET', data, getURL)
+  });
+}
+
 // Change user
 function changeUser() {
 
+
   // Update info user
-  $('#update_user').each(function() {
-    $(".input_field").on("change", function(e) {
-      let getId = $(".id").val();
-      let updateFirstname = $(".firstname").val();
-      let updateLastname = $(".lastname").val();
-      let updateCreatedAt = $(".createdAt").val();
-      let updateGender = $(".gender").val();
-      let updateActive = $(".active").val();
+  $(".btn_update_user").click(function() {
+    let id = $(".id").val();
+    var updateUrl = URL + id;
+    let updateFirstname = $(".firstname").val();
+    let updateLastname = $(".lastname").val();
+    let updateCreatedAt = $(".createdAt").val();
+    let updateGender = $(".gender").val();
+    let updateActive = $(".active").val();
 
-      // Update info user
-      $(".update_user").click(function() {
-        var updateUrl = URL + getId;
+    let data = {
+      firstName: updateFirstname,
+      lastName: updateLastname,
+      createdAt: updateCreatedAt,
+      gender: updateGender,
+      active: updateActive,
+    }
 
-        var data = {
-          firstName: updateFirstname,
-          lastName: updateLastname,
-          createdAt: updateCreatedAt,
-          gender: updateGender,
-          active: updateActive,
-        }
+    console.log(data);
 
-        api('PUT', data, updateUrl);
+    api('PUT', data, updateUrl);
 
-      });
-    });
   });
 
   // Delete User
-  $('.delete_user').click(function() {
+  $('.btn_delete_user').click(function() {
     let id = $(".id").val();
     let deleteUrl = URL + id;
 
-    var data = {
+    let data = {
       id: id
     }
 
@@ -253,4 +250,4 @@ function createUser() {
 
 getUsersFromApi(URL, infoUser);
 changeUser();
-createUser();
+// createUser();

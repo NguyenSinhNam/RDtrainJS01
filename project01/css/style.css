@@ -503,12 +503,12 @@ width: 100%;
   max-width: 40%;
 }
 
-.form_data_user .submit button.delete_user {
+.form_data_user .submit button.btn_delete_user {
   background-color: red;
   color: #fff;
 }
 
-.form_data_user .submit button.delete_user:hover {
+.form_data_user .submit button.btn_delete_user:hover {
   background-color: #c12121;
 }
 
