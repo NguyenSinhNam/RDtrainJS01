@@ -415,9 +415,43 @@ p {
   line-height: 24px;
 }
 
-.list_users {
+body {
   width: 700px;
   margin: 50px auto;
+}
+
+.create_user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #000;
+  height: 36px;
+  width: 200px;
+  background-color: #ddd;
+}
+
+.table_user .thead {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f2f2f2;
+}
+
+.table_user .thead span,
+.list_users li .info span {
+  width: 25%;
+}
+
+.table_user .thead span:first-child,
+.list_users li .info span:first-child {
+  width: 5%;
+}
+
+.table_user .thead span:last-child,
+.list_users li .info span:last-child {
+  width: 20%;
 }
 
 .list_users li {
@@ -440,9 +474,7 @@ border: 1px solid #ddd;
   display: none;
 }
 
-.form_date_user {
-  width: 700px;
-  margin: 50px auto;
+.form_data_user {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -450,16 +482,16 @@ border: 1px solid #ddd;
   padding: 20px;
 }
 
-.form_date_user .input_field {
+.form_data_user .input_field {
   width: calc(50% - 8px);
   display: block;
 }
 
-.form_date_user .input_field:nth-child(n+3) {
+.form_data_user .input_field:nth-child(n+3) {
   margin-top: 16px;
 }
 
-.form_date_user .submit {
+.form_data_user .submit {
   text-align: center;
   margin-top: 16px;
   display: flex;
@@ -467,15 +499,19 @@ justify-content: space-between;
 width: 100%;
 }
 
-.form_date_user .submit button {
+.form_data_user .submit button {
   max-width: 40%;
 }
 
-.form_date_user .submit button.delete_user {
+.form_data_user .submit button.delete_user {
   background-color: red;
   color: #fff;
 }
 
-.form_date_user .submit button.delete_user:hover {
+.form_data_user .submit button.delete_user:hover {
   background-color: #c12121;
+}
+
+.warning {
+  color: red;
 }

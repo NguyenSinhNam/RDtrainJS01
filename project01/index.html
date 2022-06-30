@@ -18,11 +18,22 @@
 
 <body>
 
-    <ul class="list_users" id="list_users">
+    <a class="create_user" href="#">Create User</a>
 
-    </ul>
-    <div id="user" class="user">
-      <form id="form_data" class="form_date_user" action="index.html" method="post">
+    <div class="table_user">
+      <div class="thead">
+        <span>STT</span>
+        <span>firstName</span>
+        <span>lastName</span>
+        <span>Gender</span>
+        <span>createdAt</span>
+      </div>
+      <ul class="list_users" id="list_users">
+
+      </ul>
+    </div>
+    <div id="update_user" class="update_user">
+      <form id="form_update" class="form_data_user" action="index.html" method="post">
         <div class="input_field">
           <label for="">ID</label>
           <input type="text" name="id" class="id" disabled="disabled">
@@ -56,6 +67,42 @@
         <div class="submit">
           <button type="button" class="update_user" name="submit">Update</button>
           <button type="button" class="delete_user" name="submit">Delete</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="new_user" class="new_user">
+      <form id="form_new" class="form_data_user" action="index.html" method="post">
+        <div class="input_field">
+          <label for="">firstname</label>
+          <input type="text" name="new_firstname" class="new_firstname" value="">
+          <span class="warning required_firstname"></span>
+        </div>
+        <div class="input_field">
+          <label for="">lastname</label>
+          <input type="text" name="new_lastname" class="new_lastname" value="">
+          <span class="warning required_lastname"></span>
+        </div>
+        <div class="input_field">
+          <label for="">gender</label>
+          <select class="new_gender" name="new_gender">
+            <option value="">---</option>
+            <option value="male">true</option>
+            <option value="female">false</option>
+          </select>
+          <span class="warning required_gender"></span>
+        </div>
+        <div class="input_field">
+          <label for="">active</label>
+          <select class="new_active" name="new_active">
+            <option value="">---</option>
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+          <span class="warning required_active"></span>
+        </div>
+        <div class="submit">
+          <button type="button" class="add_user" name="submit">Add User</button>
         </div>
       </form>
     </div>
